@@ -15,7 +15,7 @@ Using PHPCompatibility requires you to first install PHP CodeSniffer globally an
 The easiest way is to create a shell function for `phpco`. No need to clone this repository. First make sure you have [Docker](https://docs.docker.com/install) installed on your machine. Then execute this in your local terminal:
 
 ```sh
-phpco() { docker run --init -v $PWD:/mnt/src:cached --rm -u "$(id -u):$(id -g)" frbit/phpco:latest $@; return $?; }
+phpco() { docker run --init -v $PWD:/mnt/src:cached --rm -u "$(id -u):$(id -g)" gegorov2030/phpco-docker:latest $@; return $?; }
 ```
 
 You can also add this snippet to your `.bashrc` or similar shell startup script. That way it will always be available whenever you open a new shell.
@@ -23,7 +23,7 @@ You can also add this snippet to your `.bashrc` or similar shell startup script.
 ## Running phpco-docker
 Now you can directly use the tool. This command will do a full check of all your code in the current directory for PHP 7.3 compatibility.
 ```
-phpco -p --colors --extensions=php --runtime-set testVersion 7.3 .
+phpco -p --colors --extensions=php --runtime-set testVersion 7.4 .
 ```
 
 As it completes you will see a list of found warnings and errors in your code. If you are getting a lot of warnings, but only want to deal with the stuff that will actually break, add `-n` to only show errors.
