@@ -28,7 +28,7 @@ phpco -p --colors --extensions=php --runtime-set testVersion 7.4 .
 
 As it completes you will see a list of found warnings and errors in your code. If you are getting a lot of warnings, but only want to deal with the stuff that will actually break, add `-n` to only show errors.
 
-If you have also updated all of your dependencies and are sure they support the PHP version you want to migrate to, you can exclude the `vendor` folder completely to only check your own code. Checking for PHP version 7.3 is the default so we can also remove that part.
+If you have also updated all of your dependencies and are sure they support the PHP version you want to migrate to, you can exclude the `vendor` folder completely to only check your own code. Checking for PHP version 7.4 is the default so we can also remove that part.
 
 ```
 phpco -p --colors --extensions=php . -n --ignore="vendor/"
